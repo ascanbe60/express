@@ -1,3 +1,3 @@
-export const fahToCel = (f) => {
-  return (5/9) * (f - 32);
+export const kelToCel = (k) => {
+  return Math.round(k - 273.15);
 }

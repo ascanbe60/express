@@ -1,6 +1,6 @@
 import request from 'request';
 
-import { fahToCel } from './helpers.js';
+import { kelToCel } from './helpers.js';
 
 export const forecast = (location, callback) => {
   const apiKey = '373997b7584cfef67d65fb4e28fff1b1';
@@ -17,8 +17,7 @@ export const forecast = (location, callback) => {
 
     callback(
       undefined,
-      `In ${body.name}, it is currently ${fahToCel(body.main.temp)} degrees out, with ${body.weather[0].description}.
-      The high today is ${fahToCel(body.main.temp_max)}, with a low of ${fahToCel(body.main.temp_min)}.`
+      `In ${body.name}, it is currently ${kelToCel(body.main.temp)}C out, with ${body.weather[0].description}. The high today is ${kelToCel(body.main.temp_max)}C, with a low of ${kelToCel(body.main.temp_min)}C.`
     );
   });
 };
